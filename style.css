@@ -1,0 +1,157 @@
+*{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    margin: 0; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px; 
+    line-height: 1.6;
+}
+
+#image {
+    background-image: url(beach.jpg);
+    height: 100vh; 
+    background-size: cover;
+    background-position: center;
+    color: rgb(245, 233, 233);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 30px; 
+}
+
+#image > h1 {
+    font-size: 40px; 
+}
+
+#section {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    width: 80%;
+    margin: auto; 
+    margin-top: 20px; 
+    margin-bottom: 30px; 
+}
+
+@media (max-width: 700px) {
+    #section {grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 400px) {
+    #section {grid-template-columns: repeat(1, 1fr); }
+}
+
+
+#section > div {
+    border: rgb(189, 185, 185) 1px solid; 
+    padding: 10px; 
+}
+
+.button {
+    text-decoration: none;
+    border: white 1px solid; 
+    color: rgb(222, 222, 222); 
+    border-radius: 8px;
+    padding: 2px 5px;
+    
+
+}
+
+.button:hover {
+    background: white;
+    color: black; 
+}
+
+
+#navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 12vh;
+    background-color: #012c32;
+    color: rgb(222, 222, 222);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+#navbar h1 {
+    font-size: 17px;
+}
+
+.navitems {
+    display: flex;
+    width: 40%; 
+    justify-content: space-around;
+    font-size: 12px; 
+}
+
+.navitems a{
+    text-decoration: none;
+    color: rgb(222, 222, 222); 
+}
+
+ul {
+    list-style: none;
+}
+
+.burger {
+    display: none; 
+}
+
+.burger div{
+    width: 23px;
+    height: 2px; 
+    background-color:rgb(222, 222, 222);
+    margin: 4px;  
+}
+
+@media screen and (max-width:550px){
+    body {
+        overflow-x: hidden;
+    }
+    .navitems {
+        position: absolute; 
+        right: 0px;
+        height: 88vh; 
+        top: 12vh; 
+        background-color: #012c32;
+        overflow: hidden;
+        display: flex;
+        display: hidden;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+    }
+
+    .navitems li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+        cursor: pointer;
+    }
+}
+
+.navitems-active{
+    transform: translateX(0);
+    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-out;
+}
+
+@keyframes navitemsFade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
